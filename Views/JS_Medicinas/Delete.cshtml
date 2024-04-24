@@ -1,11 +1,12 @@
 ﻿@model JulianaSosa_Examen1P.Models.JS_Medicinas
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Delete";
 }
 
-<h1>Details</h1>
+<h1>Delete</h1>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>JS_Medicinas</h4>
     <hr />
@@ -15,6 +16,12 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.JS_DescripcionMedicina)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cantidad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cantidad)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.JS_FechaDeEntrega)
@@ -29,8 +36,10 @@
             @Html.DisplayFor(model => model.JS_ConReceta)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.JS_MedicinasID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="JS_MedicinasID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
 </div>

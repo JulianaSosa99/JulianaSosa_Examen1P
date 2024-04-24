@@ -39,6 +39,9 @@ namespace JulianaSosa_Examen1P.Migrations
                     b.Property<DateTime>("JS_FechaDeEntrega")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("cantidad")
+                        .HasColumnType("int");
+
                     b.HasKey("JS_MedicinasID");
 
                     b.ToTable("JS_Medicinas");

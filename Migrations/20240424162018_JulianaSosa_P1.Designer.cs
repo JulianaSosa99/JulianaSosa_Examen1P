@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JulianaSosa_Examen1P.Migrations
 {
     [DbContext(typeof(JulianaSosa_Examen1PContext))]
-    [Migration("20240424160758_JulianaSosaDB")]
-    partial class JulianaSosaDB
+    [Migration("20240424162018_JulianaSosa_P1")]
+    partial class JulianaSosa_P1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace JulianaSosa_Examen1P.Migrations
 
                     b.Property<DateTime>("JS_FechaDeEntrega")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("cantidad")
+                        .HasColumnType("int");
 
                     b.HasKey("JS_MedicinasID");
 

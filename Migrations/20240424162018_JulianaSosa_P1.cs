@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace JulianaSosa_Examen1P.Migrations
 {
     /// <inheritdoc />
-    public partial class JulianaSosaDB : Migration
+    public partial class JulianaSosa_P1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,6 +18,7 @@ namespace JulianaSosa_Examen1P.Migrations
                     JS_MedicinasID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     JS_DescripcionMedicina = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    cantidad = table.Column<int>(type: "int", nullable: false),
                     JS_FechaDeEntrega = table.Column<DateTime>(type: "datetime2", nullable: false),
                     JS_ConReceta = table.Column<bool>(type: "bit", nullable: false)
                 },

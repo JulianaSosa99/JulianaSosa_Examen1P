@@ -5,16 +5,16 @@ namespace JulianaSosa_Examen1P.Models
     public class JS_Medicinas
     {
         [Required]
-        public int JS_MedicinasID {  get; set; }
-        [MaxLength(20, ErrorMessage="Por favor ingresar hasta 20 caracteres"),MinLength(5)]
+        public int JS_MedicinasID { get; set; }
+        [MaxLength(20, ErrorMessage = "Por favor ingresar hasta 20 caracteres"), MinLength(5)]
         public string? JS_DescripcionMedicina { get; set; }
         [RequerirCantidad]
-        public int cantidad {  get; set; }
+        public int cantidad { get; set; }
 
         [Required]
         public DateTime JS_FechaDeEntrega { get; set; }
-         //Prueba
-        public bool JS_ConReceta {  get; set; }
+        //Prueba
+        public bool JS_ConReceta { get; set; }
 
         public class RequerirCantidad : ValidationAttribute
         {
@@ -35,3 +35,4 @@ namespace JulianaSosa_Examen1P.Models
 
         }
     }
+}

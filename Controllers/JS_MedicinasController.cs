@@ -9,22 +9,22 @@ using JulianaSosa_Examen1P.Models;
 
 namespace JulianaSosa_Examen1P.Controllers
 {
-    public class MedicinasController : Controller
+    public class JS_MedicinasController : Controller
     {
         private readonly JulianaSosa_Examen1PContext _context;
 
-        public MedicinasController(JulianaSosa_Examen1PContext context)
+        public JS_MedicinasController(JulianaSosa_Examen1PContext context)
         {
             _context = context;
         }
 
-        // GET: Medicinas
+        // GET: JS_Medicinas
         public async Task<IActionResult> Index()
         {
             return View(await _context.JS_Medicinas.ToListAsync());
         }
 
-        // GET: Medicinas/Details/5
+        // GET: JS_Medicinas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,18 +42,18 @@ namespace JulianaSosa_Examen1P.Controllers
             return View(jS_Medicinas);
         }
 
-        // GET: Medicinas/Create
+        // GET: JS_Medicinas/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Medicinas/Create
+        // POST: JS_Medicinas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JS_MedicinasID,JS_DescripcionMedicina,JS_FechaDeEntrega,JS_ConReceta")] JS_Medicinas jS_Medicinas)
+        public async Task<IActionResult> Create([Bind("JS_MedicinasID,JS_DescripcionMedicina,cantidad,JS_FechaDeEntrega,JS_ConReceta")] JS_Medicinas jS_Medicinas)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace JulianaSosa_Examen1P.Controllers
             return View(jS_Medicinas);
         }
 
-        // GET: Medicinas/Edit/5
+        // GET: JS_Medicinas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,12 +80,12 @@ namespace JulianaSosa_Examen1P.Controllers
             return View(jS_Medicinas);
         }
 
-        // POST: Medicinas/Edit/5
+        // POST: JS_Medicinas/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JS_MedicinasID,JS_DescripcionMedicina,JS_FechaDeEntrega,JS_ConReceta")] JS_Medicinas jS_Medicinas)
+        public async Task<IActionResult> Edit(int id, [Bind("JS_MedicinasID,JS_DescripcionMedicina,cantidad,JS_FechaDeEntrega,JS_ConReceta")] JS_Medicinas jS_Medicinas)
         {
             if (id != jS_Medicinas.JS_MedicinasID)
             {
@@ -115,7 +115,7 @@ namespace JulianaSosa_Examen1P.Controllers
             return View(jS_Medicinas);
         }
 
-        // GET: Medicinas/Delete/5
+        // GET: JS_Medicinas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,7 +133,7 @@ namespace JulianaSosa_Examen1P.Controllers
             return View(jS_Medicinas);
         }
 
-        // POST: Medicinas/Delete/5
+        // POST: JS_Medicinas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
