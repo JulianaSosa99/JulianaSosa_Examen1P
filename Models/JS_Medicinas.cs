@@ -11,7 +11,7 @@ namespace JulianaSosa_Examen1P.Models
 
         [Required]
         public DateTime JS_FechaDeEntrega { get; set; }
-         
+         //Prueba
         public bool JS_ConReceta {  get; set; }
 
         
