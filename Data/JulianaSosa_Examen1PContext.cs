@@ -13,4 +13,5 @@ using JulianaSosa_Examen1P.Models;
         }
 
         public DbSet<JulianaSosa_Examen1P.Models.JS_Medicinas> JS_Medicinas { get; set; } = default!;
+    //Update Data Base 
     }
